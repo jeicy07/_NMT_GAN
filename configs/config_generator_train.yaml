@@ -1,8 +1,8 @@
 ---
 src_vocab: '/data3/jeicy/data/chinese.vocab'
 dst_vocab: '/data3/jeicy/data/english.vocab'
-src_vocab_size: 675124
-dst_vocab_size: 869195
+src_vocab_size: 32000
+dst_vocab_size: 32000
 hidden_units: 512
 scale_embedding: True
 attention_dropout_rate: 0.0
