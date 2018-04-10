@@ -17,7 +17,7 @@ train:
     tokens_per_batch:  25000
     max_length: 50
     num_epochs: 500
-    logdir: 'g_pretrain'
+    logdir: 'pre.gen.log'
     save_freq: 1000
     summary_freq: 100
     grads_clip: 5
@@ -26,6 +26,8 @@ train:
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
     batch_size: 256
+    shared_embedding: False
+
 test:
     src_path: '/data3/jeicy/data/eval/eval/eval_jieba.zh'
     dst_path: '/data3/jeicy/data/eval/eval/eval_jieba.zh'
