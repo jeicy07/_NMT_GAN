@@ -25,7 +25,7 @@ train:
     learning_rate: 0.00005
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
-    batch_size: 256
+    batch_size: 100
     shared_embedding: False
 
 test:
@@ -33,7 +33,7 @@ test:
     dst_path: '/data3/jeicy/data/eval/eval/eval_jieba.zh'
     ori_dst_path: '/data/zhyang/dl4mt/corpus/data_450w_en_de/transformer/lf_50_for_gan_train/bleuTest/newstest2013/newstest2013.tok.de'
     output_path: '/data/zhyang/dl4mt/corpus/data_450w_en_de/transformer/lf_50_for_gan_train/bleuTest/newstest2013/newstest2013.tok.de.output'
-    batch_size: 256
+    batch_size: 100
     max_target_length: 200
     beam_size: 4
     lp_alpha: 0.6

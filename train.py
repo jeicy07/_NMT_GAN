@@ -32,6 +32,11 @@ def train(config):
         with tf.Session(config=sess_config) as sess:
             # Initialize all variables.
             sess.run(tf.global_variables_initializer())
+            logger.info('Total: {} params'.format(
+                np.sum([
+                    np.prod(v.get_shape().as_list())
+                    for v in tf.trainable_variables()
+                ])))
             try:
                 # saver_partial.restore(sess, tf.train.latest_checkpoint(config.train.logdir))
                 # print('Restore partial model from %s.' % config.train.logdir)
