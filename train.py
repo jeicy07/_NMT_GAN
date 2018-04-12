@@ -5,6 +5,7 @@ import os
 import logging
 from argparse import ArgumentParser
 import tensorflow as tf
+import numpy as np
 
 from utils import DataUtil, AttrDict
 from model import Model
