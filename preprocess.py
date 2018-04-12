@@ -66,7 +66,7 @@ def split_english(en_file):
 
     with open(en_split_file, 'w') as f2:
         for line in lines:
-            f2.write(line + '\n')
+            f2.write(line)
 
 
 # add ' '
@@ -132,12 +132,12 @@ def joint_original_and_translate(zh_file, en_file, data_mode):
 if __name__ == '__main__':
     # read_sgm(eval_file_zh_sgm)
     # read_sgm(eval_file_en_sgm)
-    split_chinese(train_file_zh)
-    split_chinese(eval_file_zh)
+    # split_chinese(train_file_zh)
+    # split_chinese(eval_file_zh)
     split_english(train_file_en)
     split_english(eval_file_en)
-    wash_data(train_file_en, train_file_zh)
-    wash_data(eval_file_en, eval_file_zh)
+    # wash_data(train_file_en, train_file_zh)
+    # wash_data(eval_file_en, eval_file_zh)
     # joint_original_and_translate(train_file_jieba_zh, train_file_en, TRAIN)
     # joint_original_and_translate(eval_file_jieba_zh, eval_file_en, EVAL)
 
