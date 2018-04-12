@@ -19,6 +19,8 @@ eval_file_zh = eval_file_zh_sgm[:-4]
 eval_file_en = eval_file_en_sgm[:-4]
 train_file_jieba_zh = train_file_zh[:-3] + '_jieba.zh'
 eval_file_jieba_zh = eval_file_zh[:-3] + '_jieba.zh'
+train_file_split_en = train_file_en[:-3] + '_split.en'
+eval_file_split_en = eval_file_en[:-3] + '_split.en'
 
 #constant
 TRAIN = 1
@@ -49,10 +51,7 @@ def split_chinese(zh_file):
         for line in lines:
             content = line[0].replace(r'[，。！《》（）“”：；？、——’‘]','')
             content = " ".join(jieba.cut(content))
-            if len(content) > 100:
-                continue
-            else:
-                f2.write(content + '\n')
+            f2.write(content + '\n')
 
 
 # split , . in english
@@ -67,11 +66,7 @@ def split_english(en_file):
 
     with open(en_split_file, 'w') as f2:
         for line in lines:
-            if len(line) > 100:
-                continue
-            else:
-                f2.write(line + '\n')
-
+            f2.write(line + '\n')
 
 
 # add ' '
@@ -81,6 +76,32 @@ def add_space(txt, chs):
     return txt
 
 
+def wash_data(en, zh):
+    en_wash = en[:-3] + '_wash.en'
+    zh_wash = zh[:-3] + '_wash.zh'
+    lines_en = []
+    lines_zh = []
+    with open(en, 'r') as f1:
+        line1 = f1.readlines()
+
+    with open(zh, 'r') as f2:
+        line2 = f2.readlines()
+
+    for line in line1:
+        line2 = line2[line1.index(line)]
+        if len(line) > 100 or len(line2) > 100:
+            continue
+        else:
+            lines_en.append(line)
+            lines_zh.append(line2)
+
+    with open(en_wash, 'w') as f3:
+        for line in lines_en:
+            f3.write(line + '\n')
+
+    with open(zh_wash, 'w') as f4:
+        for line in lines_zh:
+            f4.write(line + '\n')
 
 
 # put the original and the translated sentences in one line
@@ -115,6 +136,8 @@ if __name__ == '__main__':
     split_chinese(eval_file_zh)
     split_english(train_file_en)
     split_english(eval_file_en)
+    wash_data(train_file_en, train_file_zh)
+    wash_data(eval_file_en, eval_file_zh)
     # joint_original_and_translate(train_file_jieba_zh, train_file_en, TRAIN)
     # joint_original_and_translate(eval_file_jieba_zh, eval_file_en, EVAL)
 
