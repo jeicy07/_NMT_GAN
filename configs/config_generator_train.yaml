@@ -3,7 +3,7 @@ src_vocab: '/data3/jeicy/data/chinese.vocab'
 dst_vocab: '/data3/jeicy/data/english.vocab'
 src_vocab_size: 32000
 dst_vocab_size: 32000
-hidden_units: 512
+hidden_units: 128
 scale_embedding: True
 attention_dropout_rate: 0.0
 residual_dropout_rate: 0.1
@@ -25,7 +25,7 @@ train:
     learning_rate: 0.00005
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
-    batch_size: 100
+    batch_size: 50
     shared_embedding: False
 
 test:
