@@ -11,7 +11,7 @@ num_blocks: 6
 num_heads: 8
 binding_embedding: False
 train:
-    devices: '2'
+    devices: '0'
     src_path: '/data/jeicy/data/train/train/train_jieba.zh'
     dst_path: '/data/jeicy/data/train/train/train_split.en'
     tokens_per_batch:  25000
@@ -37,4 +37,4 @@ test:
     max_target_length: 200
     beam_size: 4
     lp_alpha: 0.6
-    devices: '2'
+    devices: '0'
