@@ -12,8 +12,8 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '2'
-    src_path: '/data3/jeicy/data/train/train/train_jieba.zh'
-    dst_path: '/data3/jeicy/data/train/train/train_split.en'
+    src_path: '/data/jeicy/data/train/train/train_jieba.zh'
+    dst_path: '/data/jeicy/data/train/train/train_split.en'
     tokens_per_batch:  25000
     max_length: 50
     num_epochs: 500
@@ -29,8 +29,8 @@ train:
     shared_embedding: False
 
 test:
-    src_path: '/data3/jeicy/data/eval/eval/eval_jieba.zh'
-    dst_path: '/data3/jeicy/data/eval/eval/eval_jieba.zh'
+    src_path: '/data/jeicy/data/eval/eval/eval_jieba.zh'
+    dst_path: '/data/jeicy/data/eval/eval/eval_jieba.zh'
     ori_dst_path: '/data/zhyang/dl4mt/corpus/data_450w_en_de/transformer/lf_50_for_gan_train/bleuTest/newstest2013/newstest2013.tok.de'
     output_path: '/data/zhyang/dl4mt/corpus/data_450w_en_de/transformer/lf_50_for_gan_train/bleuTest/newstest2013/newstest2013.tok.de.output'
     batch_size: 100
