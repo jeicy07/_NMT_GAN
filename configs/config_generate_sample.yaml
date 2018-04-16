@@ -28,3 +28,5 @@ train:
     batch_size: 50
     shared_embedding: False
     modelFile: '/data/jeicy/_NMT_GAN/pre.gen.log/model_epoch_2_step_9000'
+generator:
+    learning_rate:0.00001
