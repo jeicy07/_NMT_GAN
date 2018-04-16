@@ -16,7 +16,7 @@ train:
     dst_path: '/data/jeicy/data/train/train/train_split.en'
     tokens_per_batch:  25000
     max_length: 50
-    num_epochs: 500
+    num_epochs: 20
     logdir: 'pre.gen.log'
     save_freq: 1000
     summary_freq: 100
@@ -25,7 +25,7 @@ train:
     learning_rate: 0.00005
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
-    batch_size: 100
+    batch_size: 50
     shared_embedding: False
 
 test:
