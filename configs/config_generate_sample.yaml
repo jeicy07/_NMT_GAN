@@ -1,9 +1,8 @@
 ---
-src_vocab: '/mnt/lustre/xushuang1/zy/zhyang/dl4mt/corpus/data_gan_180w_zxw/180w_bpe_lf_50_for_generate_data/source_bpe_u8.txt.vocab.38831'
-dst_vocab: '/mnt/lustre/xushuang1/zy/zhyang/dl4mt/corpus/data_gan_180w_zxw/180w_bpe_lf_50_for_generate_data/target_bpe_u8.txt.vocab.34432'
-src_vocab_size: 38831
-dst_vocab_size: 34432
-hidden_units: 512
+src_vocab: '/data/jeicy/data/chinese.vocab'
+dst_vocab: '/data/jeicy/data/english.vocab'
+dst_vocab_size: 32000
+hidden_units: 128
 scale_embedding: True
 attention_dropout_rate: 0.0
 residual_dropout_rate: 0.1
@@ -11,13 +10,13 @@ num_blocks: 6
 num_heads: 8
 binding_embedding: False
 train:
-    devices: '0,1,2,3,4,5,6,7'
-    src_path: '/mnt/lustre/xushuang1/zy/zhyang/dl4mt/corpus/data_gan_180w_zxw/180w_bpe_lf_50_for_generate_data/source_bpe_u8.txt_lf_50'
-    out_path: '/mnt/lustre/xushuang1/zy/zhyang/dl4mt/corpus/data_gan_180w_zxw/180w_bpe_lf_50_for_generate_data/negative_bpe_u8.txt'
+    devices: '0'
+    src_path: '/data/jeicy/data/train/train/500train_jieba.zh'
+    out_path: '/data/jeicy/data/generate/negative.en'
     tokens_per_batch:  25000
     max_length: 50
     num_epochs: 1
-    logdir: '../experience/data_180w/generate_data/model-180w_zh2en_bpe'
+    logdir: 'generate.samples.log'
     save_freq: 1000
     summary_freq: 100
     grads_clip: 5.0
@@ -25,6 +24,6 @@ train:
     learning_rate: 0.00005
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
-    batch_size: 256
+    batch_size: 50
     shared_embedding: False
-    modelFile: '../experience/data_180w/generate_data/model-180w_zh2en_bpe/model_epoch_10_step_42000'
+    modelFile: '/data/jeicy/_NMT_GAN/pre.gen.log/model_epoch_2_step_9000'
