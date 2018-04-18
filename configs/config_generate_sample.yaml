@@ -12,7 +12,7 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/train/train/500train_jieba.zh'
+    src_path: '/data/jeicy/data/train/train/10train_jieba.zh'
     out_path: '/data/jeicy/data/generate/negative.en'
     tokens_per_batch:  25000
     max_length: 50
@@ -27,6 +27,6 @@ train:
     label_smoothing: 0.1
     batch_size: 50
     shared_embedding: False
-    modelFile: '/data/jeicy/10w/_NMT_GAN/pre.gen.log/model_epoch_1_step_1000'
+    modelFile: '/data/jeicy/10w/_NMT_GAN/pre.gen.log/model_epoch_1_step_2000'
 generator:
     learning_rate: 0.00001
