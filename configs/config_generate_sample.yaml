@@ -14,7 +14,7 @@ train:
     devices: '0'
     src_path: '/data/jeicy/data/train/train/10train_jieba.zh'
     out_path: '/data/jeicy/data/generate/negative.en'
-    tokens_per_batch:  25000
+    tokens_per_batch:  2500
     max_length: 50
     num_epochs: 1
     logdir: 'generate.samples.log'
