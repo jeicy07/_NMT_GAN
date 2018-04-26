@@ -31,8 +31,8 @@ train:
 test:
     src_path: '/data/jeicy/data/eval/eval/eval_jieba.zh'
     dst_path: '/data/jeicy/data/eval/eval/eval_jieba.zh'
-    ori_dst_path: '/data/zhyang/dl4mt/corpus/data_450w_en_de/transformer/lf_50_for_gan_train/bleuTest/newstest2013/newstest2013.tok.de'
-    output_path: '/data/zhyang/dl4mt/corpus/data_450w_en_de/transformer/lf_50_for_gan_train/bleuTest/newstest2013/newstest2013.tok.de.output'
+    ori_dst_path: '/data/jeicy/data/eval/eval/eval_jieba.zh'
+    output_path: '/data/jeicy/data/eval/eval/10w-evaluate.output'
     batch_size: 100
     max_target_length: 200
     beam_size: 4
