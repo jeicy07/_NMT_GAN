@@ -2,7 +2,7 @@
 src_vocab: '/data/jeicy/data/10w_chinese.vocab'
 dst_vocab: '/data/jeicy/data/10w_english.vocab'
 src_vocab_size: 47141
-dst_vocab_size: 9796
+dst_vocab_size: 36939
 hidden_units: 128
 scale_embedding: True
 attention_dropout_rate: 0.0
