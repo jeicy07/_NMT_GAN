@@ -17,7 +17,7 @@ train:
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 200
-    logdir: 'pre.gen.log'
+    logdir: 'pre.gen.log_10w'
     save_freq: 1000
     summary_freq: 100
     grads_clip: 5
