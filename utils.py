@@ -295,10 +295,11 @@ class DataUtil(object):
         assert o in ('src', 'dst')
         idx2word = self.idx2src if o == 'src' else self.idx2dst
         pad_index = idx2word
-        sents=[]
+        sents = []
         for y in Y:
-            sent= []
+            sent = []
             for i in y:
+                print (i)
                 if i > 0:
                     w = idx2word[i]
                     sent.append(w)
