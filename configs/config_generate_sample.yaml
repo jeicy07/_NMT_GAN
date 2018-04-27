@@ -12,8 +12,8 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/train/train/100_train_jieba.zh'
-    out_path: '/data/jeicy/data/generate/100_negative.en'
+    src_path: '/data/jeicy/data/train/train/10w1_train_jieba.zh'
+    out_path: '/data/jeicy/data/generate/10w1_negative.en'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 1
