@@ -297,9 +297,9 @@ class DataUtil(object):
         pad_index = idx2word
         sents = []
         for y in Y:
+            print (y)
             sent = []
             for i in y:
-                print (i)
                 if i > 0:
                     w = idx2word[i]
                     sent.append(w)
