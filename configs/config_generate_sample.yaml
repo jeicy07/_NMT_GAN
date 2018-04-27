@@ -27,6 +27,6 @@ train:
     label_smoothing: 0.1
     batch_size: 50
     shared_embedding: False
-    modelFile: '/data/jeicy/10w/_NMT_GAN/pre.gen.log/model_epoch_199_step_67000'
+    modelFile: '/data/jeicy/10w/_NMT_GAN/pre.gen.log/model_epoch_199_step_132000'
 generator:
     learning_rate: 0.00001
