@@ -1,7 +1,6 @@
 from __future__ import print_function
 import codecs
 import os
-import path
 import tensorflow as tf
 import numpy as np
 import yaml
