@@ -29,9 +29,9 @@ train:
     shared_embedding: False
 
 test:
-    src_path: '/data/jeicy/data/eval/eval/eval_jieba.zh'
-    dst_path: '/data/jeicy/data/eval/eval/eval_jieba.zh'
-    ori_dst_path: '/data/jeicy/data/eval/eval/eval_jieba.zh'
+    src_path: '/data/jeicy/data/eval/eval/valid.en-zh_jieba.zh'
+    dst_path: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
+    ori_dst_path: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
     output_path: '/data/jeicy/data/eval/eval/10w-evaluate.output'
     batch_size: 100
     max_target_length: 200
