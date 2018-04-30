@@ -5,6 +5,7 @@ import sys
 import pandas as pd
 from bs4 import BeautifulSoup
 import jieba
+import pickle
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -21,6 +22,8 @@ train_file_jieba_zh = train_file_zh[:-3] + '_jieba.zh'
 eval_file_jieba_zh = eval_file_zh[:-3] + '_jieba.zh'
 train_file_split_en = train_file_en[:-3] + '_split.en'
 eval_file_split_en = eval_file_en[:-3] + '_split.en'
+src_vocab_size = "/data/jeicy/data/10w_chinese.vocab"
+dst_vocab_size = '/data/jeicy/data/10w_english.vocab'
 
 #constant
 TRAIN = 1
@@ -129,17 +132,32 @@ def joint_original_and_translate(zh_file, en_file, data_mode):
     df.to_csv(filename, index=False, encoding='utf-8', sep='\t')
 
 
+def vocab_to_pkl(vocab):
+    line = []
+    pkl_file = vocab + '.pkl'
+    with open(vocab, 'r') as v:
+        for vocab in v.readlines():
+            line.append(vocab)
+
+    with open(pkl_file, 'w') as f:
+        pickle.dump(line, f)
+
+
+
+
 if __name__ == '__main__':
     # read_sgm(eval_file_zh_sgm)
     # read_sgm(eval_file_en_sgm)
     # split_chinese(train_file_zh)
     # split_chinese(eval_file_zh)
-    split_english('/Users/jiqian/NMT_GAN/data/train/train/500train.en')
+    # split_english('/Users/jiqian/NMT_GAN/data/train/train/500train.en')
     # split_english(eval_file_en)
     # wash_data(train_file_en, train_file_zh)
     # wash_data(eval_file_en, eval_file_zh)
     # joint_original_and_translate(train_file_jieba_zh, train_file_en, TRAIN)
     # joint_original_and_translate(eval_file_jieba_zh, eval_file_en, EVAL)
+    vocab_to_pkl(src_vocab_size)
+    vocab_to_pkl(dst_vocab_size)
 
 
 

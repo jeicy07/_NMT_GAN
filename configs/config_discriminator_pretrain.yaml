@@ -12,8 +12,8 @@ num_heads: 8
 binding_embedding: False
 train:
     logdir: 'pre.dis.log'
-    dis_src_vocab: '/data/jeicy/data/10w_chinese.vocab'
-    dis_dst_vocab: '/data/jeicy/data/10w_english.vocab'
+    dis_src_vocab: '/data/jeicy/data/10w_chinese.vocab.pkl'
+    dis_dst_vocab: '/data/jeicy/data/10w_english.vocab.pkl'
     dis_max_epoches: 2
     dis_dispFreq: 1
     dis_saveFreq: 100
