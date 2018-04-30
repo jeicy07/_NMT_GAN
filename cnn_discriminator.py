@@ -333,6 +333,7 @@ class DisCNN(object):
             #self.params = params
 
             grads_and_vars = self.optimizer.compute_gradients(losses, params)
+            print (grads_and_vars)
 
             #for grad, var in grads_and_vars:
             #        print (var.name, grad)
@@ -565,19 +566,15 @@ class DisCNN(object):
   
       reuse_var = False
       for i, gpu_device in enumerate(self.gpu_devices):
-          #print('i is %d, gpu is %s' %(i, gpu_device))
           if i > 0:
               reuse_var = True
-          #print('reuse_var is ', reuse_var)
           _, _, _, ypred_for_auc, predictions, losses, correct_predictions, accuracy, grads_and_vars  = self.build_model(reuse_var=reuse_var, gpu_device=gpu_device)
-          print (grads_and_vars)
           loss += losses
           accu += accuracy
           grads.append(grads_and_vars)
   
       loss = loss / self.gpu_num
       accuracy = accu / self.gpu_num
-      print type(grads)
       #grads_and_vars = average_clip_gradient(grads, self.clip_c)
       grads_and_vars = average_clip_gradient_by_value(grads, -1.0, 1.0)
       optm = self.optimizer.apply_gradients(grads_and_vars)
