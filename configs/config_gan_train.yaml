@@ -1,9 +1,9 @@
 ---
-src_vocab: '/data3/jeicy/data/chinese.vocab'
-dst_vocab: '/data3/jeicy/data/english.vocab'
-src_vocab_size: 38831
-dst_vocab_size: 34432
-hidden_units: 512
+src_vocab: '/data/jeicy/data/10w_chinese.vocab'
+dst_vocab: '/data/jeicy/data/10w_english.vocab'
+src_vocab_size: 47141
+dst_vocab_size: 36939
+hidden_units: 128
 scale_embedding: True
 attention_dropout_rate: 0.0
 residual_dropout_rate: 0.1
@@ -16,13 +16,13 @@ gan_dis_iter_num: 1
 generate_num: 5000
 rollnum: 20
 bias_num: 0.6
-logdir: '/data3/jeicy/log/gan_train/model_zh2en_bpe'
+logdir: 'gan.log'
 
 train:
     devices: '0'
-    src_path: '/data3/jeicy/data/train/train/train_jieba.zh'
-    dst_path: '/data3/jeicy/data/train/train/train.en'
-    tokens_per_batch:  25000
+    src_path: '/data/jeicy/data/train/train/10w_train_jieba.zh'
+    dst_path: '/data/jeicy/data/train/train/10w_train_split.en'
+    tokens_per_batch:  2500
     max_length: 50
     num_epochs: 500
     logdir: 'gan.log'
@@ -33,7 +33,7 @@ train:
     learning_rate: 0.00005
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
-    batch_size: 250
+    batch_size: 50
     shared_embedding: False
 
 generator:
