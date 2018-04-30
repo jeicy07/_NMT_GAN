@@ -174,7 +174,9 @@ class DisCNN(object):
         gpu_string = gpu_device
         gpu_devices = []
         gpu_devices = gpu_string.split('-')
+        print gpu_device
         self.gpu_devices = gpu_devices[1:]
+        print self.gpu_devices
         self.gpu_num = len(self.gpu_devices)
         #print('the gpu_num is ', self.gpu_num)
 
