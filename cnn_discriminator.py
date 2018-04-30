@@ -174,11 +174,8 @@ class DisCNN(object):
         gpu_string = gpu_device
         gpu_devices = []
         gpu_devices = gpu_string.split('-')
-        print gpu_device
         self.gpu_devices = gpu_devices[1:]
-        print self.gpu_devices
         self.gpu_num = len(self.gpu_devices)
-        #print('the gpu_num is ', self.gpu_num)
 
         self.build_placeholder()
         
@@ -572,10 +569,6 @@ class DisCNN(object):
               reuse_var = True
 
           _, _, _, ypred_for_auc, predictions, losses, correct_predictions, accuracy, grads_and_vars  = self.build_model(reuse_var=reuse_var, gpu_device=gpu_device)
-          print (ypred_for_auc)
-          print (predictions)
-          print (losses)
-          print (grads_and_vars)
           loss += losses
           accu += accuracy
           grads.append(grads_and_vars)
