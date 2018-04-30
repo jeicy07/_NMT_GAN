@@ -21,7 +21,7 @@ train:
     dis_batch_size: 50
     dis_saveto: '/data/jeicy/10w/_NMT_GAN/pre_dis'
     dis_reshuffle: True
-    dis_gpu_device: '0'
+    dis_gpu_device: 'gpu-0'
     dis_max_len: 50
     dis_positive_data: '/data/jeicy/data/train/train/10w_train_split.zh'
     dis_negative_data: '/data/jeicy/data/generate/10w_negative.en'
