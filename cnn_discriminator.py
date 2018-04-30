@@ -568,7 +568,12 @@ class DisCNN(object):
       for i, gpu_device in enumerate(self.gpu_devices):
           if i > 0:
               reuse_var = True
-          _, _, _, ypred_for_auc, predictions, losses, correct_predictions, accuracy, grads_and_vars  = self.build_model(reuse_var=reuse_var, gpu_device=gpu_device)
+
+           _, _, _, ypred_for_auc, predictions, losses, correct_predictions, accuracy, grads_and_vars  = self.build_model(reuse_var=reuse_var, gpu_device=gpu_device)
+          print (ypred_for_auc)
+          print (predictions)
+          print (losses)
+          print (grads_and_vars)
           loss += losses
           accu += accuracy
           grads.append(grads_and_vars)
