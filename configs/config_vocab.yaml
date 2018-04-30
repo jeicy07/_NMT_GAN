@@ -1,5 +1,5 @@
-src_vocab: '/data/jeicy/data/10w_chinese.vocab'
-dst_vocab: '/data/jeicy/data/10w_english.vocab'
+src_vocab: '/data/jeicy/data/chinese.vocab'
+dst_vocab: '/data/jeicy/data/english.vocab'
 train:
-    src_path: '/data/jeicy/data/train/train/10w_train_jieba.zh'
-    dst_path: '/data/jeicy/data/train/train/10w_train_split.en'
+    src_path: '/data/jeicy/data/train/train/train_jieba.zh'
+    dst_path: '/data/jeicy/data/train/train/train_split.en'

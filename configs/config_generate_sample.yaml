@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/10w_chinese.vocab'
-dst_vocab: '/data/jeicy/data/10w_english.vocab'
+src_vocab: '/data/jeicy/data/chinese.vocab'
+dst_vocab: '/data/jeicy/data/english.vocab'
 src_vocab_size: 47141
 dst_vocab_size: 36939
 hidden_units: 128
@@ -12,8 +12,8 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/train/train/10w_train_jieba.zh'
-    out_path: '/data/jeicy/data/generate/10w_negative.en'
+    src_path: '/data/jeicy/data/train/train/train_jieba.zh'
+    out_path: '/data/jeicy/data/generate/negative.en'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 1
@@ -27,6 +27,6 @@ train:
     label_smoothing: 0.1
     batch_size: 50
     shared_embedding: False
-    modelFile: '/data/jeicy/10w/_NMT_GAN/pre.gen.log_10w/model_epoch_198_step_73000'
+    modelFile: '/data/jeicy/_NMT_GAN/pre.gen.log/model_epoch_198_step_73000'
 generator:
     learning_rate: 0.00001

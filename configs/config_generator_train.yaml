@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/10w_chinese.vocab'
-dst_vocab: '/data/jeicy/data/10w_english.vocab'
+src_vocab: '/data/jeicy/data/chinese.vocab'
+dst_vocab: '/data/jeicy/data/english.vocab'
 src_vocab_size: 47141
 dst_vocab_size: 36939
 hidden_units: 128
@@ -12,12 +12,12 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/train/train/10w_train_jieba.zh'
-    dst_path: '/data/jeicy/data/train/train/10w_train_split.en'
+    src_path: '/data/jeicy/data/train/train/train_jieba.zh'
+    dst_path: '/data/jeicy/data/train/train/train_split.en'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 200
-    logdir: 'pre.gen.log_10w'
+    logdir: 'pre.gen.log'
     save_freq: 1000
     summary_freq: 100
     grads_clip: 5
@@ -32,7 +32,7 @@ test:
     src_path: '/data/jeicy/data/eval/eval/valid.en-zh_jieba.zh'
     dst_path: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
     ori_dst_path: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
-    output_path: '/data/jeicy/data/eval/eval/10w-evaluate.output'
+    output_path: '/data/jeicy/data/eval/eval/evaluate.output'
     batch_size: 100
     max_target_length: 200
     beam_size: 4
