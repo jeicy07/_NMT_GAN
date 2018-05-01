@@ -332,7 +332,6 @@ class DisCNN(object):
             #self.params = params
 
             grads_and_vars = self.optimizer.compute_gradients(losses, params)
-            print (grads_and_vars)
 
             #for grad, var in grads_and_vars:
             #        print (var.name, grad)
@@ -702,36 +701,36 @@ class DisCNN(object):
 
         if numpy.mod(uidx, self.devFreq) == 0:
             print('testing the accuracy on the evaluation sets')
-           # def dis_train_iter():
-           #       Epoch = 0
-           #       while True:
-           #           disTrain = disThreeTextIterator(self.dev_positive_data, self.dev_negative_data, self.dev_source_data, self.dictionaries[1], self.dictionaries[0],
-           #                                      batch=self.batch_size,
-           #                                      maxlen=self.max_len, 
-           #                                      n_words_target = self.vocab_size,
-           #                                      n_words_source = self.vocab_size_s)
-           #           ExampleNum = 0
-           #           EpochStart = time.time()
-           #           for x, y, xs in disTrain:
-           #              ExampleNum+=len(x)
-           #              yield x, y, xs, Epoch
-           #           TimeCost = time.time() - EpochStart
-           #           Epoch +=1
+            def dis_train_iter():
+                 Epoch = 0
+                 while True:
+                     disTrain = disThreeTextIterator(self.dev_positive_data, self.dev_negative_data, self.dev_source_data, self.dictionaries[1], self.dictionaries[0],
+                                                batch=self.batch_size,
+                                                maxlen=self.max_len,
+                                                n_words_target = self.vocab_size,
+                                                n_words_source = self.vocab_size_s)
+                     ExampleNum = 0
+                     EpochStart = time.time()
+                     for x, y, xs in disTrain:
+                        ExampleNum+=len(x)
+                        yield x, y, xs, Epoch
+                     TimeCost = time.time() - EpochStart
+                     Epoch += 1
 
-           # dev_it = dis_train_iter()
-           # dev_epoch = 0
-           # dev_uidx = 0
-           # while dev_epoch < 1:
-           #         dev_x, dev_y, dev_xs,dev_epoch = next(dev_it)
-           #         dev_uidx +=1
-           #          
-           #         dev_x = numpy.array(dev_x)
-           #         dev_y = numpy.array(dev_y)
-           #         dev_xs = numpy.array(dev_xs)
+            dev_it = dis_train_iter()
+            dev_epoch = 0
+            dev_uidx = 0
+            while dev_epoch < 1:
+                   dev_x, dev_y, dev_xs,dev_epoch = next(dev_it)
+                   dev_uidx +=1
 
-           #         x, y, xs = dis_three_length_prepare(dev_x, dev_y, dev_xs, self.max_len)
-           #         myFeed_dict={self.dis_input_x:x, self.dis_input_y:y, self.dis_input_xs:xs, self.dis_dropout_keep_prob:1.0}
-           #         dev_ypred_out, dev_accuracy_out = self.sess.run([self.dis_ypred_for_auc, self.dis_accuracy], feed_dict=myFeed_dict)
+                   dev_x = numpy.array(dev_x)
+                   dev_y = numpy.array(dev_y)
+                   dev_xs = numpy.array(dev_xs)
+
+                   x, y, xs = dis_three_length_prepare(dev_x, dev_y, dev_xs, self.max_len)
+                   myFeed_dict={self.dis_input_x:x, self.dis_input_y:y, self.dis_input_xs:xs, self.dis_dropout_keep_prob:1.0}
+                   dev_ypred_out, dev_accuracy_out = self.sess.run([self.dis_ypred_for_auc, self.dis_accuracy], feed_dict=myFeed_dict)
   
-           #         print('the accuracy_out in evaluation is %f' % dev_accuracy_out)
+                   print('the accuracy_out in evaluation is %f' % dev_accuracy_out)
 
