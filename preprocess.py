@@ -22,8 +22,8 @@ train_file_jieba_zh = train_file_zh[:-3] + '_jieba.zh'
 eval_file_jieba_zh = eval_file_zh[:-3] + '_jieba.zh'
 train_file_split_en = train_file_en[:-3] + '_split.en'
 eval_file_split_en = eval_file_en[:-3] + '_split.en'
-src_vocab_size = "/data/jeicy/data/chinese.vocab"
-dst_vocab_size = '/data/jeicy/data/english.vocab'
+src_vocab_size = "/data/jeicy/data/300w_chinese.vocab"
+dst_vocab_size = '/data/jeicy/data/300w_english.vocab'
 
 #constant
 TRAIN = 1
@@ -148,9 +148,9 @@ def vocab_to_pkl(vocab):
 if __name__ == '__main__':
     # read_sgm(eval_file_zh_sgm)
     # read_sgm(eval_file_en_sgm)
-    # split_chinese(train_file_zh)
+    # split_chinese('/Users/jicl/_NMT_GAN/data/train/train/train.zh')
     # split_chinese(eval_file_zh)
-    # split_english('/Users/jiqian/NMT_GAN/data/train/train/500train.en')
+    # split_english('/Users/jicl/_NMT_GAN/data/train/train/train.en')
     # split_english(eval_file_en)
     # wash_data(train_file_en, train_file_zh)
     # wash_data(eval_file_en, eval_file_zh)

@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/chinese.vocab'
-dst_vocab: '/data/jeicy/data/english.vocab'
+src_vocab: '/data/jeicy/data/300w_chinese.vocab'
+dst_vocab: '/data/jeicy/data/300w_english.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
 hidden_units: 128
@@ -12,8 +12,8 @@ num_heads: 8
 binding_embedding: False
 train:
     logdir: 'pre.dis.log'
-    dis_src_vocab: '/data/jeicy/data/chinese.vocab.pkl'
-    dis_dst_vocab: '/data/jeicy/data/english.vocab.pkl'
+    dis_src_vocab: '/data/jeicy/data/300w_chinese.vocab.pkl'
+    dis_dst_vocab: '/data/jeicy/data/300w_english.vocab.pkl'
     dis_max_epoches: 2
     dis_dispFreq: 1
     dis_saveFreq: 100
