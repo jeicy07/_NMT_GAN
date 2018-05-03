@@ -22,8 +22,8 @@ train_file_jieba_zh = train_file_zh[:-3] + '_jieba.zh'
 eval_file_jieba_zh = eval_file_zh[:-3] + '_jieba.zh'
 train_file_split_en = train_file_en[:-3] + '_split.en'
 eval_file_split_en = eval_file_en[:-3] + '_split.en'
-src_vocab_size = "/data/jeicy/data/300w_chinese.vocab"
-dst_vocab_size = '/data/jeicy/data/300w_english.vocab'
+src_vocab_size = "/data/jeicy/data/100w_chinese.vocab"
+dst_vocab_size = '/data/jeicy/data/100w_english.vocab'
 
 #constant
 TRAIN = 1

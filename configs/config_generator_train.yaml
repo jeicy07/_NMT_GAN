@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/300w_chinese.vocab'
-dst_vocab: '/data/jeicy/data/300w_english.vocab'
+src_vocab: '/data/jeicy/data/100w_chinese.vocab'
+dst_vocab: '/data/jeicy/data/100w_english.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
 hidden_units: 128
@@ -12,8 +12,8 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/train/train/300w_train_jieba.zh'
-    dst_path: '/data/jeicy/data/train/train/300w_train_split.en'
+    src_path: '/data/jeicy/data/train/train/train_jieba_100w.zh'
+    dst_path: '/data/jeicy/data/train/train/train_split_100w.en'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 200
