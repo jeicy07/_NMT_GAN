@@ -332,7 +332,6 @@ class DisCNN(object):
             #self.params = params
 
             grads_and_vars = self.optimizer.compute_gradients(losses, params)
-            print (grads_and_vars)
 
             #for grad, var in grads_and_vars:
             #        print (var.name, grad)
