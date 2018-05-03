@@ -13,7 +13,7 @@ binding_embedding: False
 train:
     devices: '0'
     src_path: '/data/jeicy/data/train/train/10w_train_jieba.zh'
-    out_path: '/data/jeicy/data/generate/10w_negative_epoch_186_step_128000.en'
+    out_path: '/data/jeicy/data/generate/10w_negative_epoch_188_step_69000.en'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 1
@@ -27,6 +27,6 @@ train:
     label_smoothing: 0.1
     batch_size: 50
     shared_embedding: False
-    modelFile: '/data/jeicy/10w/_NMT_GAN/pre.gen.log_10w/model_epoch_186_step_128000'
+    modelFile: '/data/jeicy/10w/_NMT_GAN/pre.gen.log_10w/model_epoch_188_step_69000'
 generator:
     learning_rate: 0.00001
