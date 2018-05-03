@@ -10,7 +10,7 @@ residual_dropout_rate: 0.1
 num_blocks: 6
 num_heads: 8
 binding_embedding: False
-gan_iter_num: 8888
+gan_iter_num: 50
 gan_gen_iter_num: 1
 gan_dis_iter_num: 1
 generate_num: 5000
