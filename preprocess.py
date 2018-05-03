@@ -150,14 +150,14 @@ if __name__ == '__main__':
     # read_sgm(eval_file_en_sgm)
     # split_chinese(train_file_zh)
     # split_chinese(eval_file_zh)
-    # split_english('/Users/jiqian/NMT_GAN/data/train/train/500train.en')
+    split_english('/Users/jicl/_NMT_GAN/data/eval/eval/valid.en-zh.en')
     # split_english(eval_file_en)
     # wash_data(train_file_en, train_file_zh)
     # wash_data(eval_file_en, eval_file_zh)
     # joint_original_and_translate(train_file_jieba_zh, train_file_en, TRAIN)
     # joint_original_and_translate(eval_file_jieba_zh, eval_file_en, EVAL)
-    vocab_to_pkl(src_vocab_size)
-    vocab_to_pkl(dst_vocab_size)
+    # vocab_to_pkl(src_vocab_size)
+    # vocab_to_pkl(dst_vocab_size)
 
 
 

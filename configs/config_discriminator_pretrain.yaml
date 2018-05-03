@@ -19,7 +19,7 @@ train:
     dis_saveFreq: 100
     dis_devFreq: 100
     dis_batch_size: 50
-    dis_saveto: '/data/jeicy/10w/_NMT_GAN/pre_dis'
+    dis_saveto: '/data/jeicy/10w/_NMT_GAN/pre.dis/discriminator'
     dis_reshuffle: True
     dis_gpu_device: 'gpu-0'
     dis_max_len: 50
