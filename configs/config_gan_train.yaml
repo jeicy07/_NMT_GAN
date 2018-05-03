@@ -75,7 +75,7 @@ discriminator:
     dis_dev_positive_data: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
     dis_dev_negative_data: '/data/jeicy/data/eval/eval/evaluate.output'
     dis_dev_source_data: '/data/jeicy/data/eval/eval/valid.en-zh_jieba.zh'
-    dis_reload: True
+    dis_reload: False
     dis_clip_c: 1.0
     dis_dim_word: 128
     dis_optimizer: 'rmsprop'
