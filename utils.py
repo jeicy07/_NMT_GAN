@@ -297,7 +297,6 @@ class DataUtil(object):
         pad_index = idx2word
         sents = []
         for y in Y:
-            print (y)
             sent = []
             for i in y:
                 if i > 0:
