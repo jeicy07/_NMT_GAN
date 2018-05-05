@@ -25,7 +25,7 @@ train:
     dis_max_len: 50
     dis_positive_data: '/data/jeicy/data/train/train/train_split_100w.en'
     dis_negative_data: '/data/jeicy/data/generate/negative_100w.en'
-    dis_source_data: '/data/jeicy/data/train/train/train_jieba_100w.zh'
+    dis_source_data: '/data/jeicy/data/train/train/train_jieba_100w_epoch_14_step_135000.zh'
     dis_dev_positive_data: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
     dis_dev_negative_data: '/data/jeicy/data/eval/eval/evaluate.output'
     dis_dev_source_data: '/data/jeicy/data/eval/eval/valid.en-zh_jieba.zh'
