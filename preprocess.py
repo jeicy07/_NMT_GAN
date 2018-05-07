@@ -137,8 +137,10 @@ def vocab_to_pkl(vocab):
     pkl_file = vocab + '.pkl'
     with open(vocab, 'r') as v:
         for vocab in v.readlines():
+            new_vocab = dict()
             vocab = vocab.split('\t')
             vocab[1] = int(vocab[1])
+            new_vocab[vocab[0]] = vocab[1]
             line.append(vocab)
 
     with open(pkl_file, 'w') as f:
