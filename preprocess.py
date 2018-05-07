@@ -133,18 +133,16 @@ def joint_original_and_translate(zh_file, en_file, data_mode):
 
 
 def vocab_to_pkl(vocab):
-    line = []
+    new_vocab = dict()
     pkl_file = vocab + '.pkl'
     with open(vocab, 'r') as v:
         for vocab in v.readlines():
-            new_vocab = dict()
             vocab = vocab.split('\t')
-            vocab[1] = int(vocab[1])
-            new_vocab[vocab[0]] = vocab[1]
-            line.append(vocab)
+            vocab_int = int(vocab[1])
+            new_vocab[vocab[0]] = vocab_int
 
     with open(pkl_file, 'w') as f:
-        pickle.dump(line, f)
+        pickle.dump(new_vocab, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 
