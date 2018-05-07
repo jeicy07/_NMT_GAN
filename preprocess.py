@@ -22,8 +22,8 @@ train_file_jieba_zh = train_file_zh[:-3] + '_jieba.zh'
 eval_file_jieba_zh = eval_file_zh[:-3] + '_jieba.zh'
 train_file_split_en = train_file_en[:-3] + '_split.en'
 eval_file_split_en = eval_file_en[:-3] + '_split.en'
-src_vocab_size = "/data/jeicy/data/100w_chinese.vocab"
-dst_vocab_size = '/data/jeicy/data/100w_english.vocab'
+src_vocab = "/data/jeicy/data/100w_chinese.vocab"
+dst_vocab = '/data/jeicy/data/100w_english.vocab'
 
 #constant
 TRAIN = 1
@@ -137,6 +137,9 @@ def vocab_to_pkl(vocab):
     pkl_file = vocab + '.pkl'
     with open(vocab, 'r') as v:
         for vocab in v.readlines():
+            vocab = vocab.split('\t')
+            vocab[1] = vocab[1][:-2]
+            vocab[1] = int(vocab[1])
             line.append(vocab)
 
     with open(pkl_file, 'w') as f:
@@ -156,8 +159,8 @@ if __name__ == '__main__':
     # wash_data(eval_file_en, eval_file_zh)
     # joint_original_and_translate(train_file_jieba_zh, train_file_en, TRAIN)
     # joint_original_and_translate(eval_file_jieba_zh, eval_file_en, EVAL)
-    vocab_to_pkl(src_vocab_size)
-    vocab_to_pkl(dst_vocab_size)
+    vocab_to_pkl(src_vocab)
+    vocab_to_pkl(dst_vocab)
 
 
 
