@@ -676,8 +676,11 @@ class DisCNN(object):
   
         myFeed_dict={}
         for i, x, y, xs in zip(range(self.gpu_num), x_data_list, y_data_list, xs_data_list):
+           print x
            x = x.tolist()
+           print x
            x, y, xs = dis_three_length_prepare(x, y, xs, self.max_len)
+           print x
            myFeed_dict[self.x_list[i]]=x
            myFeed_dict[self.y_list[i]]=y
            myFeed_dict[self.xs_list[i]]=xs
