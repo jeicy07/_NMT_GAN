@@ -148,18 +148,18 @@ def vocab_to_pkl(vocab):
 
 
 if __name__ == '__main__':
-    # read_sgm(eval_file_zh_sgm)
-    # read_sgm(eval_file_en_sgm)
+    # read_sgm('/Users/jicl/_NMT_GAN/data/test_a/test_a.sgm')
+    # read_sgm('/Users/jicl/_NMT_GAN/data/test_b/test_b.sgm')
     # split_chinese('/Users/jicl/_NMT_GAN/data/train/train/train.zh')
     # split_chinese(eval_file_zh)
-    # split_english('/Users/jicl/_NMT_GAN/data/train/train/train.en')
-    # split_english(eval_file_en)
+    split_english('/Users/jicl/_NMT_GAN/data/test_a/test_a')
+    split_english('/Users/jicl/_NMT_GAN/data/test_b/test_b')
     # wash_data(train_file_en, train_file_zh)
     # wash_data(eval_file_en, eval_file_zh)
     # joint_original_and_translate(train_file_jieba_zh, train_file_en, TRAIN)
     # joint_original_and_translate(eval_file_jieba_zh, eval_file_en, EVAL)
-    vocab_to_pkl(src_vocab)
-    vocab_to_pkl(dst_vocab)
+    # vocab_to_pkl(src_vocab)
+    # vocab_to_pkl(dst_vocab)
 
 
 
