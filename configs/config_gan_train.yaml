@@ -50,7 +50,7 @@ generator:
     summary_freq: 100
     grads_clip: 5
     optimizer: 'rmsprop'
-    modelFile: '/data/jeicy/_NMT_GAN/pre.gen.log/model_epoch_14_step_135000'
+    modelFile: '/data/jeicy/_NMT_GAN/pre.gen.log/model_epoch_14_step_66000'
     learning_rate: 0.00001
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
