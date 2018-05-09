@@ -32,7 +32,7 @@ test:
     src_path: '/data/jeicy/data/eval/eval/valid.en-zh_jieba.zh'
     dst_path: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
     ori_dst_path: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
-    output_path: '/data/jeicy/data/eval/eval/evaluate_100w_2.output'
+    output_path: '/data/jeicy/data/eval/eval/evaluate_100w.output'
     batch_size: 100
     max_target_length: 200
     beam_size: 4
