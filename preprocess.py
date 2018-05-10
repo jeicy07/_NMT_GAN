@@ -22,8 +22,8 @@ train_file_jieba_zh = train_file_zh[:-3] + '_jieba.zh'
 eval_file_jieba_zh = eval_file_zh[:-3] + '_jieba.zh'
 train_file_split_en = train_file_en[:-3] + '_split.en'
 eval_file_split_en = eval_file_en[:-3] + '_split.en'
-src_vocab = "/data/jeicy/data/100w_chinese.vocab"
-dst_vocab = '/data/jeicy/data/100w_english.vocab'
+src_vocab = "/data/jeicy/data/ec-sjtu/en.vocab"
+dst_vocab = '/data/jeicy/data/ec-sjtu/zh.vocab'
 
 #constant
 TRAIN = 1
@@ -152,14 +152,14 @@ if __name__ == '__main__':
     # read_sgm('/Users/jicl/_NMT_GAN/data/test_b/test_b.sgm')
     # split_chinese('/Users/jicl/_NMT_GAN/data/train/train/train.zh')
     # split_chinese(eval_file_zh)
-    split_english('/Users/jicl/_NMT_GAN/data/test_a/test_a')
-    split_english('/Users/jicl/_NMT_GAN/data/test_b/test_b')
+    # split_english('/Users/jicl/_NMT_GAN/data/test_a/test_a')
+    # split_english('/Users/jicl/_NMT_GAN/data/test_b/test_b')
     # wash_data(train_file_en, train_file_zh)
     # wash_data(eval_file_en, eval_file_zh)
     # joint_original_and_translate(train_file_jieba_zh, train_file_en, TRAIN)
     # joint_original_and_translate(eval_file_jieba_zh, eval_file_en, EVAL)
-    # vocab_to_pkl(src_vocab)
-    # vocab_to_pkl(dst_vocab)
+    vocab_to_pkl(src_vocab)
+    vocab_to_pkl(dst_vocab)
 
 
 
