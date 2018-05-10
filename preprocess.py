@@ -145,15 +145,35 @@ def vocab_to_pkl(vocab):
         pickle.dump(new_vocab, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 
+def joint_train_data(file1, file2):
+    new_line = []
+    new_file = file1 + '-all'
+    with open(file1, 'r') as f1:
+        for line in f1.readlines():
+            new_line.append(line)
+    with open(file2, 'r') as f2:
+        for line in f2.readlines():
+            new_line.append(line)
+    with open(new_file, 'w') as nf:
+        for nl in new_line:
+            nf.write(nl)
+
+
 
 
 if __name__ == '__main__':
-    # read_sgm('/Users/jicl/_NMT_GAN/data/test_a/test_a.sgm')
-    # read_sgm('/Users/jicl/_NMT_GAN/data/test_b/test_b.sgm')
-    # split_chinese('/Users/jicl/_NMT_GAN/data/train/train/train.zh')
-    # split_chinese(eval_file_zh)
-    split_english('/Users/jicl/_NMT_GAN/data/test_a/test_a')
-    split_english('/Users/jicl/_NMT_GAN/data/test_b/test_b')
+    # read_sgm('/Users/jicl/_NMT_GAN/EC-sjtu/dev/NJU-newsdev2018-enzh/CWMT2017-ec-news-test-ref.xml')
+    # read_sgm('/Users/jicl/_NMT_GAN/EC-sjtu/dev/NJU-newsdev2018-enzh/CWMT2017-ec-news-test-src.xml')
+    # read_sgm('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-ref.zh.sgm')
+    # read_sgm('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-src.en.sgm')
+    # split_chinese('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_cn.txt')
+    # split_chinese('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-ref.zh')
+    # split_english('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_en.txt')
+    joint_train_data('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_cn',
+                     '/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-ref_jieba.zh')
+    joint_train_data('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_en',
+                     '/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-src_split.en')
+    # split_english('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-src.en')
     # wash_data(train_file_en, train_file_zh)
     # wash_data(eval_file_en, eval_file_zh)
     # joint_original_and_translate(train_file_jieba_zh, train_file_en, TRAIN)
