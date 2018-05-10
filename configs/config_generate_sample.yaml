@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/100w_chinese.vocab'
-dst_vocab: '/data/jeicy/data/100w_english.vocab'
+src_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
+dst_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
 hidden_units: 128
@@ -12,12 +12,12 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/train/train/train_jieba_100w.zh'
-    out_path: '/data/jeicy/data/generate/negative_100w_epoch_14_step_66000.en'
+    src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
+    out_path: '/data/jeicy/data/ec-sjtu/generate/negative_100w_epoch_14_step_66000.en'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 1
-    logdir: 'generate.samples.log'
+    logdir: 'news.generate.samples.log'
     save_freq: 1000
     summary_freq: 100
     grads_clip: 5.0
@@ -27,6 +27,6 @@ train:
     label_smoothing: 0.1
     batch_size: 50
     shared_embedding: False
-    modelFile: '/data/jeicy/_NMT_GAN/pre.gen.log/model_epoch_14_step_66000'
+    modelFile: '/data/jeicy/_NMT_GAN/news.pre.gen.log/model_epoch_14_step_66000'
 generator:
     learning_rate: 0.00001

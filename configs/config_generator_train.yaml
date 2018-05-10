@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/100w_chinese.vocab'
-dst_vocab: '/data/jeicy/data/100w_english.vocab'
+src_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
+dst_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
 hidden_units: 128
@@ -12,12 +12,12 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/train/train/train_jieba_100w.zh'
-    dst_path: '/data/jeicy/data/train/train/train_split_100w.en'
+    src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
+    dst_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 200
-    logdir: 'pre.gen.log'
+    logdir: 'news.pre.gen.log'
     save_freq: 1000
     summary_freq: 100
     grads_clip: 5
@@ -29,10 +29,10 @@ train:
     shared_embedding: False
 
 test:
-    src_path: '/data/jeicy/data/eval/eval/valid.en-zh_jieba.zh'
-    dst_path: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
-    ori_dst_path: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
-    output_path: '/data/jeicy/data/eval/eval/evaluate_100w.output'
+    src_path: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_split.en'
+    dst_path: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_jieba.zh'
+    ori_dst_path: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_jieba.zh'
+    output_path: '/data/jeicy/data/ec-sjtu/dev/evaluate.output'
     batch_size: 100
     max_target_length: 200
     beam_size: 4

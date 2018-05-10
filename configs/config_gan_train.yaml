@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/100w_chinese.vocab'
-dst_vocab: '/data/jeicy/data/100w_english.vocab'
+src_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
+dst_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
 hidden_units: 128
@@ -16,16 +16,16 @@ gan_dis_iter_num: 1
 generate_num: 5000
 rollnum: 20
 bias_num: 0.6
-logdir: 'gan.log'
+logdir: 'news.gan.log'
 
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/train/train/train_jieba_100w.zh'
-    dst_path: '/data/jeicy/data/train/train/train_split_100w.en'
+    src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
+    dst_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 50
-    logdir: 'gan.log'
+    logdir: 'news.gan.log'
     save_freq: 1000
     summary_freq: 100
     grads_clip: 5
@@ -37,20 +37,20 @@ train:
     shared_embedding: False
 
 generator:
-    src_vocab: '/data/jeicy/data/100w_chinese.vocab'
-    dst_vocab: '/data/jeicy/data/100w_english.vocab'
+    src_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
+    dst_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
     devices: '0'
-    src_path: '/data/jeicy/data/train/train/train_jieba_100w.zh'
-    dst_path: '/data/jeicy/data/train/train/train_split_100w.en'
+    src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
+    dst_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 50
-    logdir: 'gan.log'
+    logdir: 'news.gan.log'
     save_freq: 1000
     summary_freq: 100
     grads_clip: 5
     optimizer: 'rmsprop'
-    modelFile: '/data/jeicy/_NMT_GAN/pre.gen.log/model_epoch_14_step_66000'
+    modelFile: '/data/jeicy/_NMT_GAN/news.pre.gen.log/model_epoch_14_step_66000'
     learning_rate: 0.00001
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
@@ -65,16 +65,16 @@ discriminator:
     dis_saveFreq: 100
     dis_devFreq: 100
     dis_batch_size: 50
-    dis_saveto: '/data/jeicy/_NMT_GAN/pre.dis.log/discriminator'
+    dis_saveto: '/data/jeicy/_NMT_GAN/news.pre.dis.log/discriminator'
     dis_reshuffle: True
     dis_gpu_devices: 'gpu-0'
     dis_max_len: 50
-    dis_positive_data: '/data/jeicy/data/gan/dis_positive_data'
-    dis_negative_data: '/data/jeicy/data/gan/dis_negative_data'
-    dis_source_data: '/data/jeicy/data/gan/dis_source_data'
-    dis_dev_positive_data: '/data/jeicy/data/eval/eval/valid.en-zh_split.en'
-    dis_dev_negative_data: '/data/jeicy/data/eval/eval/evaluate_100w.output'
-    dis_dev_source_data: '/data/jeicy/data/eval/eval/valid.en-zh_jieba.zh'
+    dis_positive_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
+    dis_negative_data: '/data/jeicy/data/ec-sjtu/generate/negative_100w_epoch_14_step_66000.en'
+    dis_source_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
+    dis_dev_positive_data: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_jieba.zh'
+    dis_dev_negative_data: '/data/jeicy/data/ec-sjtu/dev/evaluate.output'
+    dis_dev_source_data: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_split.en'
     dis_reload: True
     dis_clip_c: 1.0
     dis_dim_word: 128
