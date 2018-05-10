@@ -23,8 +23,8 @@ train_file_jieba_zh = train_file_zh[:-3] + '_jieba.zh'
 eval_file_jieba_zh = eval_file_zh[:-3] + '_jieba.zh'
 train_file_split_en = train_file_en[:-3] + '_split.en'
 eval_file_split_en = eval_file_en[:-3] + '_split.en'
-src_vocab = "/data/jeicy/data/100w_chinese.vocab"
-dst_vocab = '/data/jeicy/data/100w_english.vocab'
+src_vocab = "/data/jeicy/data/ec-sjtu/en.vocab"
+dst_vocab = '/data/jeicy/data/ec-sjtu/zh.vocab'
 
 #constant
 TRAIN = 1
@@ -203,9 +203,9 @@ if __name__ == '__main__':
     # wash_data(eval_file_en, eval_file_zh)
     # joint_original_and_translate(train_file_jieba_zh, train_file_en, TRAIN)
     # joint_original_and_translate(eval_file_jieba_zh, eval_file_en, EVAL)
-    # vocab_to_pkl(src_vocab)
-    # vocab_to_pkl(dst_vocab)
-    pick_100w('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NEU_newsdev2017-src-all', '/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NEU_newsdev2017-ref-all')
+    vocab_to_pkl(src_vocab)
+    vocab_to_pkl(dst_vocab)
+    # pick_100w('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NEU_newsdev2017-src-all', '/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NEU_newsdev2017-ref-all')
 
 
 
