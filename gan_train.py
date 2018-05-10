@@ -84,7 +84,10 @@ def gan_train(config):
             set_max_length=config.generator.max_length
         )
 
+        summary = []
+        epoch_num = 0
         for epoch in range(1, config.gan_iter_num + 1):
+            gen_summary = dict()
             for gen_iter in range(config.gan_gen_iter_num):
                 batch = next(batch_iter)
                 x, y_ground = batch[0], batch[1]
@@ -113,6 +116,7 @@ def gan_train(config):
 
                 print("the reward is ", rewards)
                 print("the loss is ", loss)
+                gen_summary["loss"] = loss
 
                 logging.info("save the model into %s" % config.generator.modelFile)
                 generator.saver.save(generator.sess, config.generator.modelFile)
@@ -130,8 +134,13 @@ def gan_train(config):
                     loss = generator.generate_step_and_update(x, y_ground, rewards_ground)
                     print("the teacher forcing reward is ", rewards_ground)
                     print("the teacher forcing loss is ", loss)
+                    gen_summary['teacher loss'] = loss
 
             generator.saver.save(generator.sess, config.generator.modelFile)
+
+            epoch_num = epoch_num + 1
+            gen_summary['epoch'] = epoch_num
+            summary.append(gen_summary)
 
             logging.info("prepare the gan_dis_data begin")
             data_num = prepare_gan_dis_data(
@@ -162,6 +171,8 @@ def gan_train(config):
             logging.info("finetune the discrimiantor done!")
 
         logging.info('reinforcement training done!')
+        for su in summary:
+            logger.info("epoch %d, the loss: %f, teacher forcing loss: %f" % (su['epoch'], su['loss'], su['teacher loss']))
 
 if __name__ == '__main__':
     sys.stdout = FlushFile(sys.stdout)
