@@ -6,6 +6,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import jieba
 import pickle
+import random
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
@@ -160,6 +161,30 @@ def joint_train_data(file1, file2):
 
 
 
+def pick_100w(en_file, zh_file):
+    en_file_300w = en_file[:-3] + '_100w.en'
+    zh_file_300w = zh_file[:-3] + '_100w.zh'
+    select_list = range(0, 2002001)
+    sel = random.sample(select_list, 1000000)
+    en = []
+    zh = []
+    sel_en = []
+    sel_zh = []
+    with open(en_file, 'r') as ef:
+        for line in ef.readlines():
+            en.append(line)
+    with open(zh_file, 'r') as zf:
+        for line in zf.readlines():
+            zh.append(line)
+    with open(en_file_300w, 'w') as e3f:
+        for s in sel:
+            e3f.write(en[s])
+    with open(zh_file_300w, 'w') as z3f:
+        for s in sel:
+            z3f.write(zh[s])
+
+
+
 
 if __name__ == '__main__':
     # read_sgm('/Users/jicl/_NMT_GAN/EC-sjtu/dev/NJU-newsdev2018-enzh/CWMT2017-ec-news-test-ref.xml')
@@ -169,10 +194,10 @@ if __name__ == '__main__':
     # split_chinese('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_cn.txt')
     # split_chinese('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-ref.zh')
     # split_english('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_en.txt')
-    joint_train_data('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_cn',
-                     '/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-ref_jieba.zh')
-    joint_train_data('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_en',
-                     '/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-src_split.en')
+    # joint_train_data('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_cn',
+    #                  '/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-ref_jieba.zh')
+    # joint_train_data('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/neu2017_200w/NEU_en',
+    #                  '/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-src_split.en')
     # split_english('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NJU-newsdev2017-enzh_2k/newsdev2017-enzh-src.en')
     # wash_data(train_file_en, train_file_zh)
     # wash_data(eval_file_en, eval_file_zh)
@@ -180,6 +205,7 @@ if __name__ == '__main__':
     # joint_original_and_translate(eval_file_jieba_zh, eval_file_en, EVAL)
     # vocab_to_pkl(src_vocab)
     # vocab_to_pkl(dst_vocab)
+    pick_100w('/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NEU_newsdev2017-src-all', '/Users/jicl/_NMT_GAN/EC-sjtu/parallel/NEU_newsdev2017-ref-all')
 
 
 
