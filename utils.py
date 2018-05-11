@@ -177,7 +177,8 @@ class DataUtil(object):
     @staticmethod
     def shuffle(list_of_files):
         tf_os, tpath = mkstemp()
-        tpath = '/data/tmp'
+        filepath = tpath[5:]
+        tpath = '/data/tmp/'+filepath
         tf = open(tpath, 'w')
 
         fds = [open(ff) for ff in list_of_files]
