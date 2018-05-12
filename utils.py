@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from __future__ import print_function
 import numpy as np
 import os
@@ -293,7 +294,7 @@ class DataUtil(object):
                 w = idx2word[i]
                 if w is u"的":
                     print (w)
-                if w is not "<UNK>":
+                if w is not u"<UNK>":
                     sent.append(w)
             sents.append(' '.join(sent))
         return sents
