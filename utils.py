@@ -292,7 +292,7 @@ class DataUtil(object):
                 if i == 3:  # </S>
                     break
                 w = idx2word[i]
-                print type(w)
+                print (type(w))
                 if w is u"的":
                     print (w)
                 if w is not u"<UNK>":
