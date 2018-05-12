@@ -305,6 +305,7 @@ class DataUtil(object):
             for i in y:
                 if i > 0:
                     w = idx2word[i]
+                    print (w)
                     if w is not '<UNK>':
                         sent.append(w)
             sents.append(' '.join(sent))
