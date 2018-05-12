@@ -50,7 +50,7 @@ generator:
     summary_freq: 100
     grads_clip: 5
     optimizer: 'rmsprop'
-    modelFile: '/data/jeicy/_NMT_GAN/news.pre.gen.log/model_epoch_14_step_66000'
+    modelFile: '/data/jeicy/_NMT_GAN/news.pre.gen.log/model_epoch_65_step_430000'
     learning_rate: 0.00001
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
@@ -70,7 +70,7 @@ discriminator:
     dis_gpu_devices: 'gpu-0'
     dis_max_len: 50
     dis_positive_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
-    dis_negative_data: '/data/jeicy/data/ec-sjtu/generate/negative_100w_epoch_14_step_66000.en'
+    dis_negative_data: '/data/jeicy/data/ec-sjtu/generate/negative_100w_epoch_65_step_430000.en'
     dis_source_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
     dis_dev_positive_data: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_jieba.zh'
     dis_dev_negative_data: '/data/jeicy/data/ec-sjtu/dev/evaluate.output'
