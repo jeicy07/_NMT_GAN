@@ -291,7 +291,8 @@ class DataUtil(object):
                 if i == 3:  # </S>
                     break
                 w = idx2word[i]
-                sent.append(w)
+                if w is not "<UNK":
+                    sent.append(w)
             sents.append(' '.join(sent))
         return sents
 
