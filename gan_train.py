@@ -85,10 +85,11 @@ def gan_train(config):
         )
 
         summary = []
-        epoch_num = 0
         for epoch in range(1, config.gan_iter_num + 1):
-            gen_summary = dict()
             for gen_iter in range(config.gan_gen_iter_num):
+                gen_summary = dict()
+                gen_summary["epoch"] = epoch
+                gen_summary["gen_iter"] = gen_iter
                 batch = next(batch_iter)
                 x, y_ground = batch[0], batch[1]
                 y_sample = generator.generate_step(x)
@@ -136,11 +137,11 @@ def gan_train(config):
                     print("the teacher forcing loss is ", loss)
                     gen_summary['teacher loss'] = loss
 
+                summary.append(gen_summary)
+
             generator.saver.save(generator.sess, config.generator.modelFile)
 
-            epoch_num = epoch_num + 1
-            gen_summary['epoch'] = epoch_num
-            summary.append(gen_summary)
+
 
             logging.info("prepare the gan_dis_data begin")
             data_num = prepare_gan_dis_data(
@@ -172,7 +173,8 @@ def gan_train(config):
 
         logging.info('reinforcement training done!')
         for su in summary:
-            logger.info("epoch %d, the loss: %f, teacher forcing loss: %f" % (su['epoch'], su['loss'], su['teacher loss']))
+            logger.info("epoch: %d, gem_iter: %d, the loss: %f, teacher forcing loss: %f" % (su['epoch'], su['gen_iter'],
+                                                                                             su['loss'], su['teacher loss']))
 
 if __name__ == '__main__':
     sys.stdout = FlushFile(sys.stdout)
