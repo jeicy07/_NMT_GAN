@@ -292,10 +292,11 @@ class DataUtil(object):
                 if i == 3:  # </S>
                     break
                 w = idx2word[i]
-                if w == u"的":
-                    print (w)
-                if w != u"<UNK>":
-                    sent.append(w)
+                # if w == u"的":
+                #     print (w)
+                # if w != u"<UNK>":
+                #     sent.append(w)
+                sent.append(w)
             sents.append(' '.join(sent))
         return sents
 
@@ -309,8 +310,9 @@ class DataUtil(object):
             for i in y:
                 if i > 0:
                     w = idx2word[i]
-                    if w != u'<UNK>':
-                        sent.append(w)
+                    # if w != u'<UNK>':
+                    #     sent.append(w)
+                    sent.append(w)
             sents.append(' '.join(sent))
         return sents
 
