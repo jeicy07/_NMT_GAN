@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
-dst_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
+src_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
+dst_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
 hidden_units: 128
@@ -12,7 +12,7 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
+    src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
     out_path: '/data/jeicy/data/ec-sjtu/generate/negative_100w_epoch_65_step_430000.en'
     tokens_per_batch:  2500
     max_length: 50

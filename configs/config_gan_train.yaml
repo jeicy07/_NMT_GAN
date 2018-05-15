@@ -69,9 +69,9 @@ discriminator:
     dis_reshuffle: True
     dis_gpu_devices: 'gpu-0'
     dis_max_len: 50
-    dis_positive_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
-    dis_negative_data: '/data/jeicy/data/ec-sjtu/generate/negative_100w_epoch_65_step_430000.en'
-    dis_source_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
+    dis_positive_data: '/data/jeicy/data/ec-sjtu/gan/dis_positive_data'
+    dis_negative_data: '/data/jeicy/data/ec-sjtu/gan/dis_negative_data'
+    dis_source_data: '/data/jeicy/data/ec-sjtu/gan/dis_source_data'
     dis_dev_positive_data: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_jieba.zh'
     dis_dev_negative_data: '/data/jeicy/data/ec-sjtu/dev/evaluate.output'
     dis_dev_source_data: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_split.en'
