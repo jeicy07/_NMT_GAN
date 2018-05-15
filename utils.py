@@ -6,6 +6,7 @@ import codecs
 import logging
 from tempfile import mkstemp
 from itertools import izip
+import random
 
 
 class AttrDict(dict):
@@ -296,6 +297,10 @@ class DataUtil(object):
                 #     print (w)
                 # if w != u"<UNK>":
                 #     sent.append(w)
+                if w == u"<UNK>":
+                    select_list = range(0, 39999)
+                    sel = random.sample(select_list, 1)
+                    w = idx2word[sel]
                 sent.append(w)
             sents.append(' '.join(sent))
         return sents
@@ -312,6 +317,10 @@ class DataUtil(object):
                     w = idx2word[i]
                     # if w != u'<UNK>':
                     #     sent.append(w)
+                    if w == u"<UNK>":
+                        select_list = range(0, 39999)
+                        sel = random.sample(select_list, 1)
+                        w = idx2word[sel]
                     sent.append(w)
             sents.append(' '.join(sent))
         return sents
