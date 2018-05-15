@@ -300,7 +300,8 @@ class DataUtil(object):
                 if w == u"<UNK>":
                     select_list = range(0, 39999)
                     sel = random.sample(select_list, 1)
-                    w = idx2word[sel]
+                    ind = sel[0]
+                    w = idx2word[ind]
                 sent.append(w)
             sents.append(' '.join(sent))
         return sents
@@ -320,7 +321,8 @@ class DataUtil(object):
                     if w == u"<UNK>":
                         select_list = range(0, 39999)
                         sel = random.sample(select_list, 1)
-                        w = idx2word[sel]
+                        ind = sel[0]
+                        w = idx2word[ind]
                     sent.append(w)
             sents.append(' '.join(sent))
         return sents
