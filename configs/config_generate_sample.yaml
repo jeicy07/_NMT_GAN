@@ -13,7 +13,7 @@ binding_embedding: False
 train:
     devices: '0'
     src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
-    out_path: '/data/jeicy/data/ec-sjtu/generate/negative_100w_epoch_65_step_430000.en'
+    out_path: '/data/jeicy/data/ec-sjtu/generate/negative_epoch_28_step_178000.en'
     tokens_per_batch:  2500
     max_length: 50
     num_epochs: 1
@@ -27,6 +27,6 @@ train:
     label_smoothing: 0.1
     batch_size: 50
     shared_embedding: False
-    modelFile: '/data/jeicy/_NMT_GAN/news.pre.gen.log/model_epoch_65_step_430000'
+    modelFile: '/data/jeicy/_NMT_GAN/news.pre.gen.log/model_epoch_28_step_178000'
 generator:
     learning_rate: 0.00001
