@@ -14,7 +14,7 @@ train:
     devices: '0'
     src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
     dst_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
-    tokens_per_batch:  5000
+    tokens_per_batch:  2500
     max_length: 50
     num_epochs: 200
     logdir: 'news.pre.gen.log'
