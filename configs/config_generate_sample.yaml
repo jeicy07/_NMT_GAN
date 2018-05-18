@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
-dst_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
+src_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
+dst_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
 hidden_units: 128
@@ -12,9 +12,9 @@ num_heads: 8
 binding_embedding: False
 train:
     devices: '0'
-    src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
-    out_path: '/data/jeicy/data/ec-sjtu/generate/negative_epoch_28_step_178000.en'
-    tokens_per_batch:  2500
+    src_path: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
+    out_path: '/data/jeicy/data/ec-sjtu/generate/negative_epoch_60_step_193000.en'
+    tokens_per_batch:  5000
     max_length: 50
     num_epochs: 1
     logdir: 'news.generate.samples.log'
@@ -25,8 +25,8 @@ train:
     learning_rate: 0.00005
     learning_rate_warmup_steps: 4000
     label_smoothing: 0.1
-    batch_size: 50
+    batch_size: 100
     shared_embedding: False
-    modelFile: '/data/jeicy/_NMT_GAN/news.pre.gen.log/model_epoch_28_step_178000'
+    modelFile: '/data/jeicy/_NMT_GAN/news.pre.gen.log/model_epoch_60_step_193000'
 generator:
     learning_rate: 0.00001
