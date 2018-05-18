@@ -3,7 +3,7 @@ src_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
 dst_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
-hidden_units: 128
+hidden_units: 512
 scale_embedding: True
 attention_dropout_rate: 0.0
 residual_dropout_rate: 0.1
