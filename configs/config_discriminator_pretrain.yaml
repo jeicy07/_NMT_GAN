@@ -3,7 +3,7 @@ src_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
 dst_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
-hidden_units: 128
+hidden_units: 512
 scale_embedding: True
 attention_dropout_rate: 0.0
 residual_dropout_rate: 0.1
@@ -18,13 +18,13 @@ train:
     dis_dispFreq: 1
     dis_saveFreq: 100
     dis_devFreq: 100
-    dis_batch_size: 50
+    dis_batch_size: 100
     dis_saveto: '/data/jeicy/_NMT_GAN/news.pre.dis.log/discriminator'
     dis_reshuffle: True
     dis_gpu_device: 'gpu-0'
     dis_max_len: 50
     dis_positive_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
-    dis_negative_data: '/data/jeicy/data/ec-sjtu/generate/negative_epoch_28_step_178000.en'
+    dis_negative_data: '/data/jeicy/data/ec-sjtu/generate/negative_epoch_3_step_100000en'
     dis_source_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
     dis_dev_positive_data: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_split.en'
     dis_dev_negative_data: '/data/jeicy/data/ec-sjtu/dev/evaluate.output'
