@@ -679,6 +679,7 @@ class DisCNN(object):
            x = x.tolist()
            x, y, xs = dis_three_length_prepare(x, y, xs, self.max_len)
            myFeed_dict[self.x_list[i]]=x
+           print x
            myFeed_dict[self.y_list[i]]=y
            myFeed_dict[self.xs_list[i]]=xs
            myFeed_dict[self.drop_list[i]]=drop_prob
