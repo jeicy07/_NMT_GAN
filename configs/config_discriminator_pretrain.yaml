@@ -24,7 +24,7 @@ train:
     dis_gpu_device: 'gpu-0'
     dis_max_len: 50
     dis_positive_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-src'
-    dis_negative_data: '/data/jeicy/data/ec-sjtu/generate/negative_epoch_3_step_100000en'
+    dis_negative_data: '/data/jeicy/data/ec-sjtu/generate/negative_epoch_3_step_100000.en'
     dis_source_data: '/data/jeicy/data/ec-sjtu/train/NEU_newsdev2017-ref'
     dis_dev_positive_data: '/data/jeicy/data/ec-sjtu/dev/CWMT2017-ec-news-test_split.en'
     dis_dev_negative_data: '/data/jeicy/data/ec-sjtu/dev/evaluate.output'
