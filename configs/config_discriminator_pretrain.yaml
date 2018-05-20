@@ -1,6 +1,6 @@
 ---
-src_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
-dst_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
+src_vocab: '/data/jeicy/data/ec-sjtu/en.vocab'
+dst_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab'
 src_vocab_size: 40000
 dst_vocab_size: 40000
 hidden_units: 512
@@ -12,8 +12,8 @@ num_heads: 8
 binding_embedding: False
 train:
     logdir: 'news.pre.dis.log'
-    dis_src_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab.pkl'
-    dis_dst_vocab: '/data/jeicy/data/ec-sjtu/en.vocab.pkl'
+    dis_src_vocab: '/data/jeicy/data/ec-sjtu/en.vocab.pkl'
+    dis_dst_vocab: '/data/jeicy/data/ec-sjtu/zh.vocab.pkl'
     dis_max_epoches: 2
     dis_dispFreq: 1
     dis_saveFreq: 100
