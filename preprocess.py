@@ -138,9 +138,14 @@ def vocab_to_pkl(vocab):
     pkl_file = vocab + '.pkl'
     with open(vocab, 'r') as v:
         for vocab in v.readlines():
+            print vocab
             vocab = vocab.split('\t')
+            print vocab
             vocab_int = int(vocab[1])
+            print vocab_int
             new_vocab[vocab[0]] = vocab_int
+            print new_vocab
+            break
 
     with open(pkl_file, 'w') as f:
         pickle.dump(new_vocab, f, protocol=pickle.HIGHEST_PROTOCOL)
